@@ -9,8 +9,8 @@ cp $origin_dir/.vscode/settings.json $PWD/.vscode/settings.json
 echo "Custom settings files copied to $PWD"
 
 echo "Adding Yarn dependencies"
-yarn add --dev babel-eslint eslint eslint-config-prettier eslint-plugin-html eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier
-yarn add eslint-plugin-babel styled-components
+yarn add --dev babel-eslint eslint eslint-plugin-babel eslint-config-prettier eslint-plugin-html eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier
+yarn add styled-components
 
 echo "Running Prettier"
 npx prettier --loglevel error --write .
