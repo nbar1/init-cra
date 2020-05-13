@@ -33,7 +33,7 @@ app.use(function (req, res, next) {
 /**
  * Load routes
  */
-var routesAuth = require('./routes/index.js');
+var routeIndex = require('./routes/index.js');
 
 app.use('/api/v1/index', routeIndex);
 
