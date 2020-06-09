@@ -4,7 +4,7 @@
 	"description": "Adds a better boilerplate to the default CRA template",
 	"main": "import-project-files.sh",
 	"bin": {
-		"init-cra": "sh ./import-project-files.sh"
+		"init-cra": "./import-project-files.sh"
 	},
 	"repository": {
 		"type": "git",
