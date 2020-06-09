@@ -1,0 +1,24 @@
+{
+	"name": "init-cra",
+	"version": "0.0.1",
+	"description": "Adds a better boilerplate to the default CRA template",
+	"main": "import-project-files.sh",
+	"bin": {
+		"init-cra": "sh ./import-project-files.sh"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nbar1/cra-project-files.git"
+	},
+	"keywords": [
+		"cra",
+		"template",
+		"boilerplate"
+	],
+	"author": "Nick Barone",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/nbar1/cra-project-files/issues"
+	},
+	"homepage": "https://github.com/nbar1/cra-project-files#readme"
+}
