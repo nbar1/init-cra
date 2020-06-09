@@ -1,6 +1,6 @@
 {
 	"name": "init-cra",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Adds a better boilerplate to the default CRA template",
 	"main": "import-project-files.sh",
 	"bin": {

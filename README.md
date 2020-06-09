@@ -1,5 +1,7 @@
 # CRA Project Files
 
+Install globally with `npm install -g init-cra`.
+
 You can run `init-cra` in a fresh CRA repo to add these helper files.
 
 ---
