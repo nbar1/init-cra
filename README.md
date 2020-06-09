@@ -1,4 +1,4 @@
-# CRA Project Files
+# init-cra (CRA Project Files)
 
 Install globally with `npm install -g init-cra`.
 

@@ -24,12 +24,12 @@ done
 
 # Copy config files
 echo "${PURPLE}Copying custom settings files to $PWD${NC}"
-cp $ORIGIN_DIR/.eslintrc $PWD
-cp $ORIGIN_DIR/.prettierrc $PWD
-cp $ORIGIN_DIR/jsconfig.json $PWD
-cp $ORIGIN_DIR/.env $PWD
+cp $ORIGIN_DIR/template/.eslintrc $PWD
+cp $ORIGIN_DIR/template/.prettierrc $PWD
+cp $ORIGIN_DIR/template/jsconfig.json $PWD
+cp $ORIGIN_DIR/template/.env $PWD
 mkdir .vscode
-cp $ORIGIN_DIR/.vscode/settings.json $PWD/.vscode/settings.json
+cp $ORIGIN_DIR/template/.vscode/settings.json $PWD/.vscode/settings.json
 
 
 # Add front-end deps
@@ -54,8 +54,8 @@ if [ $SERVER_DEPS -eq 1 ]; then
 	mkdir server
 	mkdir server/routes
 	mkdir server/lib
-	cp $ORIGIN_DIR/server/index.js $PWD/server/index.js
-	cp $ORIGIN_DIR/server/routes/index.js $PWD/server/routes/index.js
+	cp $ORIGIN_DIR/template/server/index.js $PWD/server/index.js
+	cp $ORIGIN_DIR/template/server/routes/index.js $PWD/server/routes/index.js
 
 	# Update package.json for server config
 	echo "${PURPLE}Updating package.json for server initialization${NC}"
