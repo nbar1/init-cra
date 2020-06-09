@@ -35,7 +35,7 @@ app.use(function (req, res, next) {
  */
 var routeIndex = require('./routes/index.js');
 
-app.use('/api/v1/index', routeIndex);
+app.use('/api/v1', routeIndex);
 
 /**
  * Start server
