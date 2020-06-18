@@ -1,6 +1,6 @@
 {
 	"editor.formatOnSave": true,
-	"eslint.validate": ["javascript", "javascriptreact"],
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
 	"files.insertFinalNewline": true,
 	"files.trimTrailingWhitespace": true,
 	"prettier.disableLanguages": ["yaml"],
@@ -15,6 +15,12 @@
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[html]": {
