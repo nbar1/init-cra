@@ -4,7 +4,7 @@ PURPLE='\033[0;35m'
 NC='\033[0m'
 SERVER_DEPS=0
 NO_COMMIT=0
-ORIGIN_DIR="/usr/local/lib/node_modules/init-cra"
+ORIGIN_DIR=$(which init-cra)
 
 # Check for server flag and add deps
 for arg in "$@"
