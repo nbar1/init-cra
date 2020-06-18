@@ -15,3 +15,7 @@ Applying this flag will install `express` and `body-parser`, along with creating
 ### **_-nc / --no-commit_**
 
 Applying this flag will skip automatically committing the files created and altered by init-cra
+
+### **_-nl / --no-lock_**
+
+Applying this flag will stop packages from being locked automatically

@@ -4,6 +4,7 @@ PURPLE='\033[0;35m'
 NC='\033[0m'
 SERVER_DEPS=0
 NO_COMMIT=0
+NO_LOCK=0
 ORIGIN_DIR="$(npm list -g --depth=0 --silent | head -1)/node_modules/init-cra"
 
 # Dependencies
@@ -23,6 +24,11 @@ do
 
 		-nc|--no-commit)
 			NO_COMMIT=1
+			shift
+			;;
+
+		-nl|--no-Lock)
+			NO_LOCK=1
 			shift
 			;;
 	esac
@@ -74,7 +80,12 @@ if [ $SERVER_DEPS -eq 1 ]; then
 fi
 
 # Lock packages
-sed -i '' 's/\"\^/\"/g' package.json
+if [ $NO_LOCK -eq 0 ]; then
+	echo "${PURPLE}Locking Packages${NC}"
+	sed -i '' 's/\"\^/\"/g' package.json
+else
+	echo "${PURPLE}No Lock flag found, not locking packages${NC}"
+fi
 
 # Run prettier
 echo "${PURPLE}Running Prettier${NC}"
@@ -82,7 +93,7 @@ npx prettier --loglevel error --write .
 
 # Commit files
 if [ $NO_COMMIT -eq 0 ]; then
-	echo "${PURPLE}Committing preference files${NC}"
+	echo "${PURPLE}Committing init-cra changes${NC}"
 	git add .
 	git commit -m "Add preference files, install default deps, run prettier on all files (automatic commit via init-cra)"
 else
