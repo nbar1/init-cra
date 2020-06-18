@@ -6,6 +6,12 @@ SERVER_DEPS=0
 NO_COMMIT=0
 ORIGIN_DIR="$(npm list -g --depth=0 --silent | head -1)/node_modules/init-cra"
 
+# Dependencies
+DEPENDENCIES=("styled-components")
+DEV_DEPENDENCIES=("babel-eslint" "eslint" "eslint-plugin-babel" "eslint-config-prettier" "eslint-plugin-html" "eslint-plugin-prettier" "eslint-plugin-react" "eslint-plugin-react-hooks" "prettier")
+SERVER_DEPENDENCIES=("express" "body-parser")
+SERVER_DEV_DEPENDENCIES=()
+
 # Check for server flag and add deps
 for arg in "$@"
 do
@@ -33,12 +39,12 @@ cp $ORIGIN_DIR/template/.vscode/settings.json $PWD/.vscode/settings.json
 
 
 # Add front-end deps
+S_DEPENDENCIES=$( IFS=$' '; echo "${DEPENDENCIES[*]}" )
+S_DEV_DEPENDENCIES=$( IFS=$' '; echo "${DEV_DEPENDENCIES[*]}" )
 echo "${PURPLE}Adding React dependencies${NC}"
-yarn add --dev babel-eslint eslint eslint-plugin-babel eslint-config-prettier eslint-plugin-html eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier
-yarn add styled-components
-
-# Lock packages
-sed -i '' 's/\"\^/\"/g' package.json
+yarn add $S_DEPENDENCIES
+echo "${PURPLE}Adding React dev dependencies${NC}"
+yarn add --dev $S_DEV_DEPENDENCIES
 
 if [ $SERVER_DEPS -eq 1 ]; then
 	# Add json global dep
@@ -49,8 +55,12 @@ if [ $SERVER_DEPS -eq 1 ]; then
 	fi
 
 	# Add server deps
+	S_SERVER_DEPENDENCIES=$( IFS=$' '; echo "${SERVER_DEPENDENCIES[*]}" )
+	S_SERVER_DEV_DEPENDENCIES=$( IFS=$' '; echo "${SERVER_DEV_DEPENDENCIES[*]}" )
 	echo "${PURPLE}Adding server dependencies${NC}"
-	yarn add express body-parser
+	yarn add $S_SERVER_DEPENDENCIES
+	echo "${PURPLE}Adding server dev dependencies${NC}"
+	yarn add $S_SERVER_DEV_DEPENDENCIES
 	mkdir server
 	mkdir server/routes
 	mkdir server/lib
@@ -62,6 +72,9 @@ if [ $SERVER_DEPS -eq 1 ]; then
 	json -I -f $PWD/package.json -e 'this.proxy="http://localhost:8080"'
 	json -I -f $PWD/package.json -e 'this.scripts.start="nodemon server/index.js & react-scripts start"'
 fi
+
+# Lock packages
+sed -i '' 's/\"\^/\"/g' package.json
 
 # Run prettier
 echo "${PURPLE}Running Prettier${NC}"
