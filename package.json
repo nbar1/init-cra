@@ -1,6 +1,6 @@
 {
 	"name": "init-cra",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"description": "Adds a better boilerplate to the default CRA template",
 	"main": "import-project-files.sh",
 	"bin": {
@@ -8,17 +8,19 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nbar1/cra-project-files.git"
+		"url": "git+https://github.com/nbar1/init-cra.git"
 	},
 	"keywords": [
 		"cra",
 		"template",
-		"boilerplate"
+		"boilerplate",
+		"create-react-app",
+		"react"
 	],
 	"author": "Nick Barone",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/nbar1/cra-project-files/issues"
+		"url": "https://github.com/nbar1/init-cra/issues"
 	},
-	"homepage": "https://github.com/nbar1/cra-project-files#readme"
+	"homepage": "https://github.com/nbar1/init-cra#readme"
 }
