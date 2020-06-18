@@ -4,7 +4,7 @@ PURPLE='\033[0;35m'
 NC='\033[0m'
 SERVER_DEPS=0
 NO_COMMIT=0
-ORIGIN_DIR=$(which init-cra)
+ORIGIN_DIR="$(npm list -g --depth=0 --silent | head -1)/node_modules/init-cra"
 
 # Check for server flag and add deps
 for arg in "$@"
