@@ -10,7 +10,7 @@ ORIGIN_DIR="$(npm list -g --depth=0 --silent | head -1)/node_modules/init-cra"
 # Dependencies
 DEPENDENCIES=("styled-components")
 DEV_DEPENDENCIES=("babel-eslint" "eslint" "eslint-plugin-babel" "eslint-config-prettier" "eslint-plugin-html" "eslint-plugin-prettier" "eslint-plugin-react" "eslint-plugin-react-hooks" "prettier")
-SERVER_DEPENDENCIES=("express" "body-parser")
+SERVER_DEPENDENCIES=("express" "body-parser" "axios")
 SERVER_DEV_DEPENDENCIES=()
 
 # Check for server flag and add deps
