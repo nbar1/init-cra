@@ -15,6 +15,7 @@
 	"plugins": ["babel", "react", "react-hooks", "prettier"],
 	"rules": {
 		"react-hooks/rules-of-hooks": "error",
-		"react/display-name": [0]
+		"react/display-name": [0],
+		"react/react-in-jsx-scope": [0]
 	}
 }
