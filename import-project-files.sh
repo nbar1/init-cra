@@ -41,7 +41,6 @@ echo "${PURPLE}Copying custom settings files to $PWD${NC}"
 cp $ORIGIN_DIR/template/.eslintrc.js $PWD
 cp $ORIGIN_DIR/template/.prettierrc.js $PWD
 cp $ORIGIN_DIR/template/tsconfig.json $PWD
-cp $ORIGIN_DIR/template/.gitignore $PWD
 cp $ORIGIN_DIR/template/.env $PWD
 mkdir .vscode
 cp $ORIGIN_DIR/template/.vscode/settings.json $PWD/.vscode/settings.json

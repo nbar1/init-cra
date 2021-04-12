@@ -6,11 +6,5 @@ modules.exports = {
 	"eslintIntegration": true,
 	"printWidth": 120,
 	"jsxBracketSameLine": false,
-	"arrowParens": "avoid",
-	"compilerOptions": {
-		"noImplicitAny": true,
-		"removeComments": true,
-		"preserveConstEnums": true,
-		"sourceMap": true
-	}
+	"arrowParens": "avoid"
 };
