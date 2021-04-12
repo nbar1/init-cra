@@ -9,7 +9,9 @@ ORIGIN_DIR="$(npm list -g --depth=0 --silent | head -1)/node_modules/init-cra"
 
 # Dependencies
 DEPENDENCIES=("styled-components")
-DEV_DEPENDENCIES=("babel-eslint" "eslint" "eslint-plugin-babel" "eslint-config-prettier" "eslint-plugin-html" "eslint-plugin-prettier" "eslint-plugin-react" "eslint-plugin-react-hooks" "prettier")
+DEV_DEPENDENCIES=("eslint" "eslint-config-airbnb" "eslint-config-prettier" "@typescript-eslint/eslint-plugin" "@typescript-eslint/parser" "eslint-plugin-import" "eslint-plugin-jsx-a11y" "eslint-plugin-html" "eslint-plugin-prettier" "eslint-plugin-react" "eslint-plugin-react-hooks" "prettier" "typescript" "@tsconfig/create-react-app")
+DEV_TYPES=("@types/node" "@types/react" "@types/react-dom" "@types/jest" "@types/eslint" "@types/prettier")
+
 SERVER_DEPENDENCIES=("express" "body-parser" "axios")
 SERVER_DEV_DEPENDENCIES=()
 
@@ -36,9 +38,10 @@ done
 
 # Copy config files
 echo "${PURPLE}Copying custom settings files to $PWD${NC}"
-cp $ORIGIN_DIR/template/.eslintrc $PWD
-cp $ORIGIN_DIR/template/.prettierrc $PWD
-cp $ORIGIN_DIR/template/jsconfig.json $PWD
+cp $ORIGIN_DIR/template/.eslintrc.js $PWD
+cp $ORIGIN_DIR/template/.prettierrc.js $PWD
+cp $ORIGIN_DIR/template/tsconfig.json $PWD
+cp $ORIGIN_DIR/template/.gitignore $PWD
 cp $ORIGIN_DIR/template/.env $PWD
 mkdir .vscode
 cp $ORIGIN_DIR/template/.vscode/settings.json $PWD/.vscode/settings.json
@@ -47,10 +50,13 @@ cp $ORIGIN_DIR/template/.vscode/settings.json $PWD/.vscode/settings.json
 # Add front-end deps
 S_DEPENDENCIES=$( IFS=$' '; echo "${DEPENDENCIES[*]}" )
 S_DEV_DEPENDENCIES=$( IFS=$' '; echo "${DEV_DEPENDENCIES[*]}" )
-echo "${PURPLE}Adding React dependencies${NC}"
+S_DEV_TYPES=$( IFS=$' '; echo "${DEV_TYPES[*]}" )
+echo "${PURPLE}Adding app dependencies${NC}"
 yarn add $S_DEPENDENCIES
-echo "${PURPLE}Adding React dev dependencies${NC}"
+echo "${PURPLE}Adding dev dependencies${NC}"
 yarn add --dev $S_DEV_DEPENDENCIES
+echo "${PURPLE}Adding types${NC}"
+yarn add --dev $S_DEV_TYPES
 
 if [ $SERVER_DEPS -eq 1 ]; then
 	# Add json global dep
