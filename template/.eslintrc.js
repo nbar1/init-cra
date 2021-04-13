@@ -21,12 +21,19 @@ module.exports = {
 		ecmaVersion: 2021,
 		sourceType: 'module',
 	},
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
+	},
 	plugins: ['react', '@typescript-eslint', 'prettier'],
 	rules: {
 		"indent": [2, 2],
 		'arrow-parens': ['error', 'as-needed'],
 		"react-hooks/rules-of-hooks": "error",
 		"react/display-name": [0],
-		'prettier/prettier': 2
+		'prettier/prettier': 2,
 	},
 };

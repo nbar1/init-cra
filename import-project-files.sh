@@ -9,7 +9,7 @@ ORIGIN_DIR="$(npm list -g --depth=0 --silent | head -1)/node_modules/init-cra"
 
 # Dependencies
 DEPENDENCIES=("styled-components")
-DEV_DEPENDENCIES=("eslint" "eslint-config-airbnb" "eslint-config-prettier" "@typescript-eslint/eslint-plugin" "@typescript-eslint/parser" "eslint-plugin-import" "eslint-plugin-jsx-a11y" "eslint-plugin-html" "eslint-plugin-prettier" "eslint-plugin-react" "eslint-plugin-react-hooks" "prettier" "typescript" "@tsconfig/create-react-app")
+DEV_DEPENDENCIES=("eslint" "eslint-config-airbnb" "eslint-config-prettier" "eslint-config-react-app" "@typescript-eslint/eslint-plugin" "@typescript-eslint/parser" "eslint-plugin-import" "eslint-plugin-jsx-a11y" "eslint-plugin-html" "eslint-plugin-prettier" "eslint-plugin-react" "eslint-plugin-react-hooks" "prettier" "typescript" "@tsconfig/create-react-app")
 DEV_TYPES=("@types/node" "@types/react" "@types/react-dom" "@types/jest" "@types/eslint" "@types/prettier")
 
 SERVER_DEPENDENCIES=("express" "body-parser" "axios")
@@ -44,6 +44,7 @@ cp $ORIGIN_DIR/template/tsconfig.json $PWD
 cp $ORIGIN_DIR/template/.env $PWD
 mkdir .vscode
 cp $ORIGIN_DIR/template/.vscode/settings.json $PWD/.vscode/settings.json
+cp $ORIGIN_DIR/template/.vscode/launch.json $PWD/.vscode/launch.json
 
 
 # Add front-end deps

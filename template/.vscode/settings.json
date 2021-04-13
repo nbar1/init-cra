@@ -1,25 +1,26 @@
 {
-	"editor.formatOnSave": true,
-	"eslint.validate": ["typescript", "typescriptreact"],
-	"files.insertFinalNewline": true,
-	"files.trimTrailingWhitespace": true,
-	"eslint.options": {
-		"plugins": ["html"]
-	},
-	"eslint.packageManager": "yarn",
-	"[json]": {
-		"editor.defaultFormatter": "vscode.json-language-features"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+  "editor.formatOnSave": true,
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "files.insertFinalNewline": true,
+  "css.lint.unknownAtRules": "ignore",
+  "files.trimTrailingWhitespace": true,
+  "eslint.options": {
+    "plugins": ["html"]
+  },
+  "eslint.packageManager": "yarn",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
